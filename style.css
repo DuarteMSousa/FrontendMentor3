@@ -36,52 +36,226 @@ main {
     display: grid;
     gap: 1em;
     height: 50%;
+    grid-template-columns: 0.8fr 1fr 1fr 1fr;
+}
+
+.user {
+    grid-row: 1/span 2;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.userHeader {
+    background-color: var(--blue);
+    border-radius: 10px;
+    height: 100%;
+}
+
+ul {
+    background-color: var(--darkBlue);
+    border-radius: 10px;
+    margin-top: auto;
+    padding: 0em;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+li {
+    list-style: none;
+    margin-left: 1.5em;
+    font-weight: 400;
+    font-size: 0.8em;
+    color: var(--paleBlue);
+}
+
+li a {
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--paleBlue);
+    font-size: 1em;
+}
+
+li a:hover {
+    color: white;
+}
+
+.work {
+    background-color: var(--lightredWork);
+    background-image: url(images/icon-work.svg);
+}
+
+.play {
+    background-color: var(--softbluePlay);
+    background-image: url(images/icon-play.svg);
+}
+
+.study {
+    background-color: var(--lightredStudy);
+    background-image: url(images/icon-study.svg);
+}
+
+.exercise {
+    background-color: var(--limegreenExercise);
+    background-image: url(images/icon-exercise.svg);
+    background-position: 90% 2%;
+}
+
+.social {
+    background-color: var(--violetSocial);
+    background-image: url(images/icon-social.svg);
+    background-position: 90% -3%;
+}
+
+.selfCare {
+    background-color: var(--softOrangeSelf);
+    background-image: url(images/icon-self-care.svg);
+}
+
+.imagem {
+    border: 2px solid white;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    background-image: url(images/image-jeremy.png);
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+.card {
+    height: 100%;
+    width: 20vw;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    border-radius: 25px;
+    background-repeat: no-repeat;
+    background-position: 90% -2%;
+    background-size: 3.5em;
+}
+
+.card h1 {
+    margin-left: 5%;
+}
+
+.card article {
+    background-color: var(--darkBlue);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+
+}
+
+.card article:hover {
+    background-color: hsl(235, 63%, 62%);
+    height: 85%;
+    transition: ease-out;
+    transition-duration: 0.2s;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    margin: 0em 1em;
+    margin-top: 1.5em;
+}
+
+h3 {
+    font-weight: 400;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 2em;
+    margin-left: 10%;
+    width: 50%;
+}
+
+h2 {
+    font-weight: 500;
+    color: var(--desaturatedBlue);
+    font-size: 0.7em;
+    margin-top: 2.3em;
+    margin-left: 10%;
+}
+
+p {
+    color: var(--paleBlue);
+}
+
+.card h1 {
+    margin-top: 0.3em;
+    font-weight: 100;
+    font-size: 2.7em;
+}
+
+.card p {
+    margin: 1em 1.5em;
+    font-size: 0.8em;
+}
+
+@media (max-width: 375px) {
+    body {
+        justify-content: start;
+        align-items: start;
+    }
+
+    main {
+        grid-template-columns: 100vw;
+        gap: 2em;
+        margin-top: 2em;
+
+    }
 
     .user {
-        grid-row: 1/span 2;
+        grid-row: 1;
+        width: 100vw;
     }
 
-    .work {
-        grid-row: 1;
-    }
-
-    .play {
-        grid-row: 1;
-    }
-
-    .study {
-        grid-row: 1;
+    .userHeader {
+        display: grid;
+        justify-content: space-between;
+        padding-left: 10%;
+        column-gap: 1.5em;
+        padding-bottom: 2em;
     }
 
     .imagem {
-        border: 2px solid white;
-        border-radius: 50%;
-        height: 60px;
-        width: 60px;
-        background-image: url(images/image-jeremy.png);
-        background-repeat: none;
-        background-size: cover;
-        background-position: center;
+        width: 90px;
+        height: 90px;
+        grid-row: 1/span 2;
+    }
+
+    .userHeader h1,
+    h2 {
+        grid-column: 2;
+        margin-left: 0;
+    }
+
+    ul {
+        flex-direction: row;
+        padding: 1em;
     }
 
     .card {
-        height: 80%;
-        width: 20vw;
-        background-color: white;
-        display: flex;
-        align-items: end;
-        justify-content: center;
-        border-radius: 25px;
+        width: 100vw;
+        height: 100%;
+        margin-bottom: 3em;
     }
 
-    .card article {
-        background-color: var(--darkBlue);
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 80%;
-        position: relative;
-        
+    .card h1{
+        display: inline;
     }
 
+    .card p {
+        display: inline;
+        align-self: flex-end;
+    }
+}
